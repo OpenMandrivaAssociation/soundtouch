@@ -10,8 +10,6 @@ Group:		System/Libraries
 License:	LGPL
 URL:		http://www.surina.net/soundtouch/
 Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.bz2
-# http://www.lobstertech.com/voicechanger/SoundTouch-1.3.0-C_FrontEnd-0.1.patch
-Patch0:		SoundTouch-1.3.1-C_FrontEnd-0.1.diff
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -55,8 +53,6 @@ chmod 644 COPYING.TXT README.html
 
 # strip away annoying ^M
 find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix -U
-
-%patch0 -p1
 
 %build
 
