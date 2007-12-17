@@ -12,7 +12,6 @@ URL:		http://www.surina.net/soundtouch/
 Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.bz2
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 SoundTouch is an open-source audio processing library. It allows changing the
