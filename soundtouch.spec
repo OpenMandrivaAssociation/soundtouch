@@ -5,11 +5,12 @@
 Summary:	An open-source audio processing library
 Name:		soundtouch
 Version:	1.3.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		System/Libraries
 License:	LGPL
 URL:		http://www.surina.net/soundtouch/
 Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.bz2
+Patch0:		soundtouch-1.3.1-gcc43.patch
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -43,6 +44,7 @@ Static libraries and header files required for compiling SoundTouch plugins.
 %prep
 
 %setup -q -n %{name}-%{version}
+%patch0 -p1
 
 find . -type d -perm 0700 -exec chmod 755 {} \;
 find . -type f -perm 0555 -exec chmod 755 {} \;
