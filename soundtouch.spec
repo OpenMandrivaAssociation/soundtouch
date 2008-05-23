@@ -11,6 +11,7 @@ License:	LGPL
 URL:		http://www.surina.net/soundtouch/
 Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.bz2
 Patch0:		soundtouch-1.3.1-gcc43.patch
+Patch1:		soundtouch-1.3.1-bpm_linkage_fix.diff
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -45,6 +46,7 @@ Static libraries and header files required for compiling SoundTouch plugins.
 
 %setup -q -n %{name}-%{version}
 %patch0 -p1
+%patch1 -p0
 
 find . -type d -perm 0700 -exec chmod 755 {} \;
 find . -type f -perm 0555 -exec chmod 755 {} \;
