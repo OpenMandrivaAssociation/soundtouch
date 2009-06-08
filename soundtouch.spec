@@ -10,6 +10,7 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://www.surina.net/soundtouch/
 Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.gz
+# patch from fedora origin, rediffed - 08 Jun 2009
 Patch0:		soundtouch-1.4.0-x86_64-asm-broken.patch
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
