@@ -4,14 +4,12 @@
 
 Summary:	An open-source audio processing library
 Name:		soundtouch
-Version:	1.5.0
-Release:	%mkrel 2
+Version:	1.6.0
+Release:	%mkrel 1
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://www.surina.net/soundtouch/
 Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.gz
-# patch from fedora origin, rediffed - 08 Jun 2009
-Patch0:		soundtouch-1.4.0-x86_64-asm-broken.patch
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -45,7 +43,6 @@ Static libraries and header files required for compiling SoundTouch plugins.
 %prep
 
 %setup -q -n %{name}
-%patch0 -p1
 
 find . -type d -perm 0700 -exec chmod 755 {} \;
 find . -type f -perm 0555 -exec chmod 755 {} \;
@@ -58,6 +55,10 @@ chmod 644 COPYING.TXT README.html
 find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix -U
 
 %build
+# (tpg) get rid of sse2 on ix86
+%ifnarch %{x86_64}
+sed -i 's|-msse2||' source/SoundTouch/Makefile.*
+%endif
 
 sh ./bootstrap
 
