@@ -52,7 +52,7 @@ find . -type f -perm 0444 -exec chmod 644 {} \;
 chmod 644 COPYING.TXT README.html
 
 # strip away annoying ^M
-find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix -U
+find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix
 
 %build
 # (tpg) get rid of sse2 on ix86
