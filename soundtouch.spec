@@ -54,6 +54,8 @@ chmod 644 COPYING.TXT README.html
 # strip away annoying ^M
 find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix
 
+sh ./bootstrap
+
 %build
 
 %configure2_5x \
