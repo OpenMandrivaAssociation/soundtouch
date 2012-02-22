@@ -55,12 +55,6 @@ chmod 644 COPYING.TXT README.html
 find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix
 
 %build
-# (tpg) get rid of sse2 on ix86
-%ifnarch %{x86_64}
-sed -i 's|-msse2||' source/SoundTouch/Makefile.*
-%endif
-
-sh ./bootstrap
 
 %configure2_5x \
     --enable-shared
