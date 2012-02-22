@@ -5,7 +5,7 @@
 Summary:	An open-source audio processing library
 Name:		soundtouch
 Version:	1.6.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://www.surina.net/soundtouch/
@@ -73,15 +73,7 @@ rm -rf %{buildroot}
 %makeinstall
 
 # cleanup
-rm -rf %{buildroot}/usr/doc
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
+rm -rf %{buildroot}{/usr/doc,%_libdir/*.la}
 
 %clean
 rm -rf %{buildroot}
@@ -101,6 +93,5 @@ rm -rf %{buildroot}
 %{_includedir}/soundtouch/*
 %{_libdir}/*.so
 %{_libdir}/*.a
-%{_libdir}/*.la
 %{_libdir}/pkgconfig/soundtouch*.pc
 %{_datadir}/aclocal/*
