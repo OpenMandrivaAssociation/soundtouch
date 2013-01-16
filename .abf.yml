@@ -1,2 +1,4 @@
+removed_sources:
+  soundtouch-1.6.0.tar.gz: 9871dcbf75a68665a3515bb9dda4727beb0358e7
 sources:
-  "soundtouch-1.6.0.tar.gz": 9871dcbf75a68665a3515bb9dda4727beb0358e7
+  soundtouch-1.7.1.tar.gz: 8b1a461754853f9c7328571449b7f9b8bd578a89

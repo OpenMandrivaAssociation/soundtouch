@@ -1,0 +1,11 @@
+--- soundtouch/configure.ac.bero	2013-01-16 02:31:01.299009965 +0100
++++ soundtouch/configure.ac	2013-01-16 02:31:06.590946455 +0100
+@@ -21,7 +21,7 @@ dnl Place - Suite 330, Boston, MA  02111
+ 
+ AC_INIT(SoundTouch, 1.7.0, [http://www.surina.net/soundtouch])
+ AC_CONFIG_AUX_DIR(config)
+-AM_CONFIG_HEADER([include/soundtouch_config.h])
++AC_CONFIG_HEADERS([include/soundtouch_config.h])
+ AM_INIT_AUTOMAKE
+ #AC_DISABLE_SHARED	dnl This makes libtool only build static libs 
+ AC_DISABLE_STATIC	dnl This makes libtool only build shared libs
