@@ -5,7 +5,7 @@
 Summary:	An open-source audio processing library
 Name:		soundtouch
 Version:	1.8.0
-Release:	3
+Release:	4
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://www.surina.net/soundtouch/
@@ -13,13 +13,6 @@ Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.gz
 Patch0:		soundtouch-automake-1.13.patch
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
-
-%track
-prog %{name} = {
-	url = http://www.surina.net/soundtouch/sourcecode.html
-	regex = "library v(__VER__) source code release"
-	version = %{version}
-}
 
 %description
 SoundTouch is an open-source audio processing library. It allows changing the
@@ -64,20 +57,17 @@ find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix
 sh ./bootstrap
 
 %build
-
-%configure2_5x \
+%configure \
     --enable-shared
 
 %make
 
 %install
-
 %makeinstall
 
 # cleanup
 rm -rf %{buildroot}{/usr/doc,%{_libdir}/*.la}
 
-%clean
 
 %files
 %doc COPYING.TXT README.html
