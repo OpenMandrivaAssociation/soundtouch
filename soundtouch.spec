@@ -42,7 +42,7 @@ Static libraries and header files required for compiling SoundTouch plugins.
 
 %prep
 %setup -q -n %{name}
-%apply_patches
+%autopatch -p1
 
 find . -type d -perm 0700 -exec chmod 755 {} \;
 find . -type f -perm 0555 -exec chmod 755 {} \;
