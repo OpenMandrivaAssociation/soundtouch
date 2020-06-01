@@ -41,7 +41,7 @@ Conflicts:	%{mklibname SoundTouch 0 -d}
 Static libraries and header files required for compiling SoundTouch plugins.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}
 %autopatch -p1
 
 find . -type d -perm 0700 -exec chmod 755 {} \;
