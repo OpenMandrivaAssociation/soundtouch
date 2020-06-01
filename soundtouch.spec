@@ -1,16 +1,16 @@
-%define	major 0
+%define	major 1
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname -d %{name}
 
 Summary:	An open-source audio processing library
 Name:		soundtouch
-Version:	1.8.0
-Release:	6
+Version:	2.1.2
+Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://www.surina.net/soundtouch/
-Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.gz
-Patch0:		soundtouch-automake-1.13.patch
+Source0:	https://gitlab.com/soundtouch/soundtouch/-/archive/%{version}/%{name}-%{version}.tar.bz2
+
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
 
@@ -41,7 +41,7 @@ Conflicts:	%{mklibname SoundTouch 0 -d}
 Static libraries and header files required for compiling SoundTouch plugins.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}
 %autopatch -p1
 
 find . -type d -perm 0700 -exec chmod 755 {} \;
@@ -60,10 +60,10 @@ sh ./bootstrap
 %configure \
     --enable-shared
 
-%make
+%make_build
 
 %install
-%makeinstall
+%make_install
 
 # cleanup
 rm -rf %{buildroot}{/usr/doc,%{_libdir}/*.la}

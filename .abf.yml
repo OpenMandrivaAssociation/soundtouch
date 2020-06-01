@@ -1,5 +1,2 @@
-removed_sources:
-  soundtouch-1.6.0.tar.gz: 9871dcbf75a68665a3515bb9dda4727beb0358e7
-  soundtouch-1.7.1.tar.gz: 8b1a461754853f9c7328571449b7f9b8bd578a89
 sources:
-  soundtouch-1.8.0.tar.gz: 2cee2c63194227b4a58da01a7cd92b8632f139cd
+  soundtouch-2.1.2.tar.bz2: a49bb8d8bb2c296a913122b8f844a1cad0429c19
