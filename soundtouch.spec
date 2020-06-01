@@ -4,13 +4,13 @@
 
 Summary:	An open-source audio processing library
 Name:		soundtouch
-Version:	1.8.0
-Release:	6
+Version:	2.1.2
+Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://www.surina.net/soundtouch/
-Source0:	http://www.surina.net/soundtouch/%{name}-%{version}.tar.gz
-Patch0:		soundtouch-automake-1.13.patch
+Source0:	https://gitlab.com/soundtouch/soundtouch/-/archive/%{version}/%{name}-%{version}.tar.bz2
+
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
 
@@ -60,10 +60,10 @@ sh ./bootstrap
 %configure \
     --enable-shared
 
-%make
+%make_build
 
 %install
-%makeinstall
+%make_install
 
 # cleanup
 rm -rf %{buildroot}{/usr/doc,%{_libdir}/*.la}
