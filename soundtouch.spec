@@ -4,8 +4,8 @@
 
 Summary:	An open-source audio processing library
 Name:		soundtouch
-Version:	2.1.2
-Release:	2
+Version:	2.3.1
+Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://www.surina.net/soundtouch/
