@@ -8,7 +8,7 @@ Version:	2.3.1
 Release:	2
 Group:		System/Libraries
 License:	LGPLv2+
-URL:		http://www.surina.net/soundtouch/
+URL:		https://www.surina.net/soundtouch/
 Source0:	https://gitlab.com/soundtouch/soundtouch/-/archive/%{version}/%{name}-%{version}.tar.bz2
 
 BuildRequires:	dos2unix
