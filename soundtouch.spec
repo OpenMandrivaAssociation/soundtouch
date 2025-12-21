@@ -11,6 +11,11 @@ License:	LGPLv2+
 URL:		https://www.surina.net/soundtouch/
 Source0:	https://gitlab.com/soundtouch/soundtouch/-/archive/%{version}/%{name}-%{version}.tar.bz2
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	dos2unix
 Conflicts:	SoundTouch
 
